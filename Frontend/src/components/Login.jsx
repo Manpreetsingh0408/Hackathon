@@ -15,7 +15,7 @@ const Login = () => {
   return (
     <div>
       <div
-        className={`container ${isSignup ? "right-panel-active" : ""}`}
+        className={`container ${isSignup ? "cont-active" : ""}`}
         id="container"
       >
         <div className="form-container sign-up-container">
@@ -28,7 +28,7 @@ const Login = () => {
             <button>Sign Up</button>
           </form>
         </div>
-        <div className="form-container sign-in-container">
+        <div className="form-container log-in-container">
           <form action="#">
             <h1>Log In</h1>
             <span>or use your account</span>
@@ -37,21 +37,21 @@ const Login = () => {
             <button>Log In</button>
           </form>
         </div>
-        <div className="overlay-container">
-          <div className="overlay">
-            <div className="overlay-panel overlay-left">
+        <div className="moving-container">
+          <div className="moving">
+            <div className="moving-panel moving-left">
               <h1>Hello, Friend!</h1>
               <p>Enter your personal details and start journey with us</p>
-              <button className="ghost" onClick={switchToSignIn} id="signIn">
+              <button className="outline" onClick={switchToSignIn} id="signIn">
                 Log In
               </button>
             </div>
-            <div className="overlay-panel overlay-right">
+            <div className="moving-panel moving-right">
               <h1>Welcome Back!</h1>
               <p>
                 To keep connected with us please login with your personal info
               </p>
-              <button className="ghost" onClick={switchToSignUp} id="signUp">
+              <button className="outline" onClick={switchToSignUp} id="signUp">
                 Sign Up
               </button>
             </div>
