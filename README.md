@@ -28,4 +28,4 @@
 * creating a user friendly design
 * solution for bad air quality index and water quality index
 * using UI libraries
-* 
+
