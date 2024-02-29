@@ -1,7 +1,7 @@
 
 ## Problem Statement 
 
-###### We have chosen two problem statement to integrate in one project which is possible and in this we are going to take the aqi and wqi and also we are going to add cloudbursting problem also 
+###### We have chosen two problem statement to integrate in one project which is possible and in this we are going to take the AQI and WQI and also we are going to add cloudbursting problem also 
 
 ## Solution
 
