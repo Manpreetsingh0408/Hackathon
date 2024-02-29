@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.navbar-container{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  position: fixed;
+  top: 3%;
+}
+.navbar{ 
+  width: 95vmax;
+  height: 7vmax;
+   background-color: #ffffff;
+  display: flex;
+  color: whitesmoke;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px 1px rgb(0, 0, 0);
+  padding: 0 2vmax 0 1vmax;
+}
+.left-nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vmax;
+  background-color: #ffffff;
+
+}
+.logo img{
+  width: 20vw;
+
+}
+.right-nav{
+  display: flex;
+  justify-content: center;
+  gap: 10vmin;
+  background-color: #ffffff;
+}
+.login,
+.home{
+  font-size: 1.5vmax;
+  letter-spacing: 0.2vmax;
+  background-color: #ffffff;
+  color: black;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  cursor: pointer;
+}
+
+.login::after,
+.home::after{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff4141; /* Adjust the color as needed */
+  transition: width 0.3s ease;
+}
+
+.login:hover,
+.home:hover {
+  color: #ff4141; /* Adjust the color as needed */
+}
+
+.login:hover::after,
+.home:hover::after{
+  width: 100%;
+}
