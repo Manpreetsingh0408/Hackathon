@@ -69,7 +69,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="parent">
       <div
         className={`container ${isSignup ? "cont-active" : ""}`}
         id="container"
@@ -81,7 +81,7 @@ const Login = () => {
             <input name="username" onChange={handleSignupChange} type="text" placeholder="Name" />
             <input name="email" onChange={handleSignupChange} type="email" placeholder="Email" />
             <input name="password" onChange={handleSignupChange} type="password" placeholder="Password" />
-            <button onClick={handleSignupSubmit}>Sign Up</button>
+            <button className="Btn" onClick={handleSignupSubmit}>Sign Up</button>
           </form>
         </div>
         <div className="form-container log-in-container">
@@ -90,7 +90,7 @@ const Login = () => {
             <span>or use your account</span>
             <input name="email" onChange={handleLoginChange} type="email" placeholder="Email" />
             <input name="password" onChange={handleLoginChange} type="password" placeholder="Password" />
-            <button onClick={handleLoginSubmit}>Log In</button>
+            <button className="Btn" onClick={handleLoginSubmit}>Log In</button>
           </form>
         </div>
         <div className="moving-container">
@@ -98,7 +98,7 @@ const Login = () => {
             <div className="moving-panel moving-left">
               <h1>Hello, Friend!</h1>
               <p>Enter your personal details and start journey with us</p>
-              <button className="outline" onClick={switchToSignIn} id="signIn">
+              <button className="outline" onClick={switchToSignIn} >
                 Log In
               </button>
             </div>
@@ -107,7 +107,7 @@ const Login = () => {
               <p>
                 To keep connected with us please login with your personal info
               </p>
-              <button className="outline" onClick={switchToSignUp} id="signUp">
+              <button className="outline" onClick={switchToSignUp} >
                 Sign Up
               </button>
             </div>

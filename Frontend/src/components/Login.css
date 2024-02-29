@@ -1,29 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-  background: #f6f5f7;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: -2vh 0 5vh;
-  margin-top: 2vh;
 }
 
 h1 {
   font-weight: bold;
   margin: 0;
+  font-size: 4vmin;
 }
 
 p {
-  font-size: 14px;
-  font-weight: 100;
+  font-size: 2vmin;
+  /* font-weight: 100; */
   /* line-height: 5.5vh;  */
   /* letter-spacing: 0.15vw; */
   margin: 4vh 0 7vh;
@@ -37,13 +28,22 @@ span {
 .container {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 5.8vw 11.6vw rgba(0, 0, 0, 0.2),
-    0 4.3vw 4.3vw rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2),
+    0 5px 5px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
   width: 76.8vw;
   max-width: 100%;
   min-height: 480px;
+  
+  
+}
+
+.parent{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-container form {
@@ -67,17 +67,31 @@ span {
 
 button {
   border-radius: 15px;
-  border: 1px solid #2b4eff;
-  background: #2b4eff;
+  border: 1px solid #FDBEAA;
+  background: #FDBEAA;
   color: #fff;
-  font-size: 12px;
+  width: 10vmax;
+  font-size: 2vmax;
+  font-weight: bold;
+  padding: 12px 45px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  margin-top: 20px;
+
+}
+Btn{
+  border-radius: 15px;
+  border: 1px solid #FDBEAA;
+  background: #fff;
+  color: #FDBEAA;
+  width: 10vmax;
+  font-size: 2vmax;
   font-weight: bold;
   padding: 12px 45px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
   margin-top: 20px;
 }
-
 button:active {
   transform: scale(0.95);
 }
@@ -86,9 +100,10 @@ button:focus {
   outline: none;
 }
 
-button.outline {
+.outline {
   background: transparent;
-  border-color: #fff;
+  border: 2px solid #FDBEAA;
+  color: #FDBEAA;
 }
 
 .form-container {
@@ -123,8 +138,7 @@ button.outline {
 }
 
 .moving {
-  background: #2b4eff;
-  background: linear-gradient(to right, #2b4eff, #153bfd) no-repeat 0 0 / cover;
+  background: #FDBEAA;
   color: #fff;
   position: relative;
   left: -100%;
