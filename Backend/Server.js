@@ -2,27 +2,33 @@ const express = require ('express')
 const app = express();
 const port = 8001;
 const mongoose = require("mongoose");
+const config=require("./init/index");
 const cors = require("cors");
 require("dotenv").config()
+app.use(cors()) 
+app.use(express.json());
 
-async function main() {
-  await mongoose.connect(
-    process.env.MONGO_URI
-  );
-}
-app.use(cors())
-app.get('/',(req,res)=>{
-  main()
-  .then(() => {
-    res.send("Connection created Successfully!");
-  })
-  .catch((err) => {
-    res.send(err)
-  });
-})
-app.get('/ping',(req,res)=>{
+app.get("/ping",(req,res)=>{ 
   res.send("pong")
 })
+ 
+ 
+
+app.get("/",(req,res)=>{
+  
+  try { 
+    let {mongoURI}=config
+    mongoose.connect(mongoURI)
+    res.send('📦 connected to mongoDB');
+  } catch (err) {
+    res.send('❌ error connecting to mongoDB:', err.message);
+  }
+
+}) 
+
+
+const productRoute = require('./routes')
+app.use('/data', productRoute)
 app.listen(port,()=>{
-  console.log(`Server is started on ${port}`)
+  console.log(`Server is started on ${port}`) 
 })
