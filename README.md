@@ -19,7 +19,7 @@
 ### Roadmap 
 
 * creating web application using mern stack 
-* Creating mongoDb database
+* creating mongoDb database
 * creating login/signup page
 * creating navbar
 * user schema added
