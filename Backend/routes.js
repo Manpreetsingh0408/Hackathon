@@ -21,14 +21,6 @@ mongoose.connect(config.mongoURI)
     });
 
 
-
-
-  
-
-
-
-
-
 router.post("/signup", async (req, res) => {
     try {
         const newUser = await userModel.create(req.body);
@@ -58,13 +50,12 @@ router.get("/signup", async (req, res) => {
 
 router.post("/login", async (req, res) => {
     try {
-        const { username, password } = req.body;
-        const user = await userModel.findOne({ username });
+        const { email, password } = req.body;
+        const user = await userModel.findOne({ email });
         
         if (user) {
             if (user.password === password) {
-                const token = jwt.sign({ username: user.username }, 'secretkey');
-                res.status(201).json({ user, token });
+                res.status(201).json({ user});
             } else {
                 res.json("The password is incorrect");
             }

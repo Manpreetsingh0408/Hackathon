@@ -1,8 +1,64 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./Login.css";
 
 const Login = () => {
   const [isSignup, setIsSignup] = useState(false);
+  const [signupdata,setSignUpData] =useState({
+    username:"",
+    email:"",
+    password:""
+  })
+  const [logindata,setLoginData] =useState({
+    email:"",
+    password:""
+  })
+
+  const handleSignupChange=(e)=>{
+    const {name,value}=e.target;
+    setSignUpData({
+      ...signupdata,
+      [name]:value
+    })
+  }
+  const handleLoginChange=(e)=>{
+    const {name,value}=e.target;
+    setLoginData({
+      ...logindata,
+      [name]:value
+    })
+  }
+
+
+  const handleSignupSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:8001/data/signup", {
+        username: signupdata.username,
+        email:signupdata.email,
+        password: signupdata.password
+      });
+      console.log(response)
+
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:8001/data/login", {
+        email:logindata.email,
+        password: logindata.password
+      });
+      console.log(response)
+
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const switchToSignUp = () => {
     setIsSignup(true);
@@ -19,22 +75,22 @@ const Login = () => {
         id="container"
       >
         <div className="form-container sign-up-container">
-          <form action="#">
+          <form action="">
             <h1>Create Account</h1>
             <span>or use your email for registration</span>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button>Sign Up</button>
+            <input name="username" onChange={handleSignupChange} type="text" placeholder="Name" />
+            <input name="email" onChange={handleSignupChange} type="email" placeholder="Email" />
+            <input name="password" onChange={handleSignupChange} type="password" placeholder="Password" />
+            <button onClick={handleSignupSubmit}>Sign Up</button>
           </form>
         </div>
         <div className="form-container log-in-container">
-          <form action="#">
+          <form action="">
             <h1>Log In</h1>
             <span>or use your account</span>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button>Log In</button>
+            <input name="email" onChange={handleLoginChange} type="email" placeholder="Email" />
+            <input name="password" onChange={handleLoginChange} type="password" placeholder="Password" />
+            <button onClick={handleLoginSubmit}>Log In</button>
           </form>
         </div>
         <div className="moving-container">
