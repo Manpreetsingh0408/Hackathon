@@ -14,8 +14,8 @@ const Navbar = () => {
           <Link to="/" className="home" style={{ textDecoration: "none" }}>
             Home
           </Link>
-          <Link to="/" className="home" style={{ textDecoration: "none" }}>
-            Home
+          <Link to="/login" className="home" style={{ textDecoration: "none" }}>
+            Login
           </Link>
         
         </div>
