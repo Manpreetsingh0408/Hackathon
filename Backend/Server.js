@@ -11,10 +11,9 @@ app.use(express.json());
 app.get("/ping",(req,res)=>{ 
   res.send("pong")
 })
- 
- 
 
-app.get("/",(req,res)=>{
+
+app.get("/",(req,res)=>{ 
   
   try { 
     let {mongoURI}=config
@@ -29,6 +28,8 @@ app.get("/",(req,res)=>{
 
 const productRoute = require('./routes')
 app.use('/data', productRoute)
+
+
 app.listen(port,()=>{
   console.log(`Server is started on ${port}`) 
 })

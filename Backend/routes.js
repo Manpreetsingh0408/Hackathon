@@ -3,6 +3,8 @@ const router=express.Router()
 const mongoose = require("mongoose");
 const config = require("./init/index");
 const userModel=require("./models/user");
+const blogModel=require("./models/Blogschema")
+const validation=require("./validation/joivalidator")
 
 require("dotenv").config();
 
@@ -10,7 +12,13 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 
-
+const validateError=(req,res,next)=>{
+   const {error}=validation.validate(req.body);
+   if(error){
+    return res.status(400).json({ error: error.details[0].message });
+   }
+   next();
+}
 
 mongoose.connect(config.mongoURI)
     .then(() => {
@@ -42,7 +50,7 @@ router.get("/signup", async (req, res) => {
     const getData = await userModel.find({})
     res.status(201).send(getData) 
     }catch(err){
-        res.status(400).send(err) 
+        res.status(400).send(err)
     }
 
 });
@@ -68,7 +76,20 @@ router.post("/login", async (req, res) => {
     }
 });
 
-
+router.post("/blog",validateError,async(req,res)=>{
+    try{
+       const blog=await blogModel.create(req.body);
+       if(blog){
+        res.status(201).json({blog});
+       }
+       else{
+        res.send("bad request")
+       }
+   }
+   catch(err){
+    res.send("error")
+   }
+})
 
 
 
