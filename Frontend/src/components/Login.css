@@ -29,15 +29,16 @@ span {
   background: #fff;
   margin-top: 7%;
   border-radius: 10px;
+
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.2);
+
   position: relative;
   overflow: hidden;
   width: 70.8vw;
-  max-width: 100%;
-  min-height: 430px;
-}
+  max-width: 100%;<<<<<<< Login
 
-.parent {
+.parent{
+
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -63,29 +64,18 @@ span {
   width: 100%;
 }
 
-/* button {
+
+
+Btn{
   border-radius: 15px;
   border: 1px solid #FDBEAA;
-  background: #FDBEAA;
-  color: #fff;
+  background: #fff;
+  color: #FDBEAA;
   width: 10vmax;
   font-size: 2vmax;
   font-weight: bold;
   padding: 12px 45px;
-  text-transform: uppercase;
-  transition: transform 80ms ease-in;
-  margin-top: 20px;
 
-} */
-.Btn {
-  border-radius: 15px;
-  border: 1px solid #fdbeaa;
-  background: #fdbeaa;
-  color: #fff;
-  width: 10vmax;
-  font-size: 10px;
-  font-weight: bold;
-  padding: 12px 25px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
   margin-top: 20px;
@@ -99,6 +89,7 @@ button:focus {
 }
 
 .outline {
+
   border-radius: 15px;
   border: 1px solid #ffffff;
   background: #fdbeaa;
@@ -110,6 +101,7 @@ button:focus {
   text-transform: uppercase;
   transition: transform 80ms ease-in;
   margin-top: 20px;
+
 }
 
 .form-container {
@@ -144,7 +136,9 @@ button:focus {
 }
 
 .moving {
+
   background: #fdbeaa;
+
   color: #fff;
   position: relative;
   left: -100%;
